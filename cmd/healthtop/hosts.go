@@ -3,12 +3,13 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/buger/goterm"
-	"github.com/gocraft/health/healthd"
 	"io/ioutil"
 	"net/http"
 	"strings"
 	"time"
+
+	"github.com/buger/goterm"
+	"github.com/gocraft/health/healthd"
 )
 
 func hostsLoop() {
@@ -40,7 +41,12 @@ func hostsLoop() {
 func pollHealthDHosts(responses chan *healthd.ApiResponseHosts, errors chan error) {
 	var body []byte
 
-	uri := "http://" + sourceHostPort + "/healthd/hosts"
+	var uri string
+	if !strings.HasPrefix(sourceHostPort, "http") {
+		uri = "http://" + sourceHostPort + "/healthd/hosts"
+	} else {
+		uri = sourceHostPort + "/healthd/hosts"
+	}
 
 	resp, err := http.Get(uri)
 	if err != nil {

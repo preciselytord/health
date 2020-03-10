@@ -2,10 +2,12 @@ package healthd
 
 import (
 	"encoding/json"
-	"github.com/gocraft/health"
 	"io/ioutil"
 	"net/http"
+	"strings"
 	"time"
+
+	"github.com/gocraft/health"
 )
 
 type pollResponse struct {
@@ -70,5 +72,12 @@ POLL_FINISH:
 }
 
 func metricsUrl(hostPort string) string {
-	return "http://" + hostPort + "/health"
+	var uri string
+	if !strings.HasPrefix(hostPort, "http") {
+		uri = "http://" + hostPort + "/health"
+	} else {
+		uri = hostPort + "/health"
+	}
+
+	return uri
 }

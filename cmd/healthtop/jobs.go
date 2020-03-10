@@ -3,13 +3,14 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/buger/goterm"
-	"github.com/gocraft/health/healthd"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
 	"time"
+
+	"github.com/buger/goterm"
+	"github.com/gocraft/health/healthd"
 )
 
 type jobOptions struct {
@@ -61,7 +62,13 @@ func pollHealthDJobs(opts *jobOptions, responses chan *healthd.ApiResponseJobs, 
 		values.Add("limit", fmt.Sprint(limit))
 	}
 
-	uri := "http://" + sourceHostPort + "/healthd/jobs"
+	var uri string
+	if !strings.HasPrefix(sourceHostPort, "http") {
+		uri = "http://" + sourceHostPort + "/healthd/jobs"
+	} else {
+		uri = sourceHostPort + "/healthd/jobs"
+	}
+
 	params := values.Encode()
 	if params != "" {
 		uri = uri + "?" + params
