@@ -2,11 +2,12 @@ package main
 
 import (
 	"fmt"
-	"github.com/Preciselyco/health"
-	"github.com/Preciselyco/health/healthd"
 	"os"
 	"strings"
 	"time"
+
+	"github.com/Preciselyco/health"
+	"github.com/Preciselyco/health/healthd"
 )
 
 // TODO's:
@@ -73,7 +74,10 @@ func getMonitoredHostPorts() []string {
 func getServerHostPort() string {
 	ret := os.Getenv("HEALTHD_SERVER_HOSTPORT")
 	if ret == "" {
-		ret = ":5031"
+		ret := os.Getenv("PORT")
+		if ret == "" {
+			ret = ":5031"
+		}
 	}
 	return ret
 }

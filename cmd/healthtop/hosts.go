@@ -40,7 +40,6 @@ func hostsLoop() {
 
 func pollHealthDHosts(responses chan *healthd.ApiResponseHosts, errors chan error) {
 	var body []byte
-
 	var uri string
 	if !strings.HasPrefix(sourceHostPort, "http") {
 		uri = "http://" + sourceHostPort + "/healthd/hosts"
