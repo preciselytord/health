@@ -2,10 +2,11 @@ package librato
 
 import (
 	"fmt"
-	"github.com/gocraft/health"
-	"github.com/stretchr/testify/assert"
 	"testing"
 	"time"
+
+	"github.com/Preciselyco/health"
+	"github.com/stretchr/testify/assert"
 )
 
 func TestNewShutdown(t *testing.T) {

@@ -1,7 +1,7 @@
 package health
 
 import (
-	"github.com/gocraft/health/stack"
+	"github.com/Preciselyco/health/stack"
 )
 
 type MutedError struct {

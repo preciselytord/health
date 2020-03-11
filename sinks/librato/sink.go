@@ -8,7 +8,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/gocraft/health"
+	"github.com/Preciselyco/health"
 )
 
 type SanitizationFunc func(string) string

@@ -8,8 +8,8 @@ import (
 	"strings"
 	"time"
 
+	"github.com/Preciselyco/health/healthd"
 	"github.com/buger/goterm"
-	"github.com/gocraft/health/healthd"
 )
 
 func hostsLoop() {

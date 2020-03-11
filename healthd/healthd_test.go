@@ -7,7 +7,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/gocraft/health"
+	"github.com/Preciselyco/health"
 	"github.com/stretchr/testify/assert"
 )
 

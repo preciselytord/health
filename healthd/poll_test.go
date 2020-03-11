@@ -7,8 +7,8 @@ import (
 	"testing"
 	"time"
 
+	"github.com/Preciselyco/health"
 	"github.com/braintree/manners"
-	"github.com/gocraft/health"
 	"github.com/stretchr/testify/assert"
 )
 

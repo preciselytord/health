@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"github.com/gocraft/health"
-	"github.com/gocraft/health/healthd"
+	"github.com/Preciselyco/health"
+	"github.com/Preciselyco/health/healthd"
 	"os"
 	"strings"
 	"time"

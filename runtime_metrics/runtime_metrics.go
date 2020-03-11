@@ -1,10 +1,11 @@
 package runtime_metrics
 
 import (
-	"github.com/gocraft/health"
 	"runtime"
 	"runtime/debug"
 	"time"
+
+	"github.com/Preciselyco/health"
 )
 
 type RuntimeMetrics struct {

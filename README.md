@@ -1,4 +1,4 @@
-# gocraft/health [![GoDoc](https://godoc.org/github.com/gocraft/health?status.png)](https://godoc.org/github.com/gocraft/health)
+# gocraft/health [![GoDoc](https://godoc.org/github.com/Preciselyco/health?status.png)](https://godoc.org/github.com/Preciselyco/health)
 
 gocraft/health allows you to instrument your service for logging and metrics, and then send that instrumentation to log files, StatsD, Bugsnag, or to be polled and aggregated via a JSON API.
 
@@ -12,8 +12,8 @@ First, you'll want to make a new Stream and attach your sinks to it. Streams are
 
 ```go
 import (
-	"github.com/gocraft/health"
-	"github.com/gocraft/health/sinks/bugsnag"
+	"github.com/Preciselyco/health"
+	"github.com/Preciselyco/health/sinks/bugsnag"
 	"os"
 )
 
@@ -58,7 +58,7 @@ Let's say you're writing a web service that processes JSON requests/responses. Y
 
 ```go
 import (
-	"github.com/gocraft/health"
+	"github.com/Preciselyco/health"
 	"net/http"
 )
 var stream = health.NewStream()
@@ -296,7 +296,7 @@ healthd will poll multiple services that are exposing a ```/health``` endpoint a
 Install the healthd binary:
 
 ```bash
-go get github.com/gocraft/health/cmd/healthd
+go get github.com/Preciselyco/health/cmd/healthd
 ```
 
 Now you can run it. It accepts two main inputs as environment variables:
@@ -330,7 +330,7 @@ healthtop is a command-line tool that repeatedly queries a healthd and displays 
 Install the healthtop binary:
 
 ```bash
-go get github.com/gocraft/health/cmd/healthtop
+go get github.com/Preciselyco/health/cmd/healthtop
 ```
 
 See your top jobs:
@@ -398,7 +398,7 @@ gocraft offers a toolkit for building web apps. Currently these packages are ava
 
 * [gocraft/web](https://github.com/gocraft/web) - Go Router + Middleware. Your Contexts.
 * [gocraft/dbr](https://github.com/gocraft/dbr) - Additions to Go's database/sql for super fast performance and convenience.
-* [gocraft/health](https://github.com/gocraft/health) -  Instrument your web apps with logging and metrics.
+* [gocraft/health](https://github.com/Preciselyco/health) -  Instrument your web apps with logging and metrics.
 * [gocraft/work](https://github.com/gocraft/work) - Process background jobs in Go.
 
 These packages were developed by the [engineering team](https://eng.uservoice.com) at [UserVoice](https://www.uservoice.com) and currently power much of its infrastructure and tech stack.

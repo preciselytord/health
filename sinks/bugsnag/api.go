@@ -4,9 +4,10 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
-	"github.com/gocraft/health/stack"
 	"io/ioutil"
 	"net/http"
+
+	"github.com/Preciselyco/health/stack"
 )
 
 type Config struct {
@@ -161,7 +162,7 @@ func newPayload(config *Config, jobName string, eventName string, err error, tra
 	}
 	p.Notifier.Name = "health"
 	p.Notifier.Version = "1.0"
-	p.Notifier.URL = "https://www.github.com/gocraft/health"
+	p.Notifier.URL = "https://www.github.com/Preciselyco/health"
 
 	return &p
 }

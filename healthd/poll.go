@@ -7,7 +7,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/gocraft/health"
+	"github.com/Preciselyco/health"
 )
 
 type pollResponse struct {

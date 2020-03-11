@@ -3,13 +3,14 @@ package bugsnag
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/gocraft/health/stack"
-	"github.com/stretchr/testify/assert"
 	"io/ioutil"
 	"net/http"
 	"strings"
 	"testing"
 	"time"
+
+	"github.com/Preciselyco/health/stack"
+	"github.com/stretchr/testify/assert"
 )
 
 func TestNotify(t *testing.T) {
@@ -51,7 +52,7 @@ func TestNotify(t *testing.T) {
 
 	frame := ex.Stacktrace[0]
 	assert.True(t, strings.HasSuffix(frame.File, "api_test.go"))
-	assert.Equal(t, frame.Method, "github.com/gocraft/health/sinks/bugsnag:TestNotify")
+	assert.Equal(t, frame.Method, "github.com/Preciselyco/health/sinks/bugsnag:TestNotify")
 
 }
 
